@@ -1,0 +1,35 @@
+{
+  "name": "telegram",
+  "version": "1.0.0",
+  "description": "Telegram Web K Electron Client",
+  "main": "main.js",
+  "author": "wriotz",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "45.3.2",
+    "electron-builder": "26.18.0"
+  },
+  "build": {
+    "appId": "com.telegram.web",
+    "productName": "Telegram",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "icon.png"
+    ]
+  }
+}
